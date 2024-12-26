@@ -24,7 +24,7 @@ export function Header({ className, onSelectPersona }: HeaderProps) {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold tracking-tight relative">
-            <span className="animate-shimmer bg-[linear-gradient(110deg,#fff,20%,#6366F1,45%,#8B5CF6,55%,#EC4899,80%,#fff)] bg-[length:200%_100%] [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]">
+            <span className="animate-shimmer bg-[linear-gradient(110deg,#fff,15%,#6366F1,35%,#8B5CF6,50%,#EC4899,65%,#fff,85%,#fff)] bg-[length:200%_100%] [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]">
               Gary Sheng
             </span>
           </h1>
