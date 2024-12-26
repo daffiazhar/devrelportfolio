@@ -1,6 +1,10 @@
 import { Card } from '@/components/ui/card';
 
 export function MainBubbleBio() {
+  const scrollToPersonas = () => {
+    document.getElementById('personas')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="mt-12">
       <Card className="p-8 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20">
@@ -13,9 +17,12 @@ export function MainBubbleBio() {
             and leveraging AI to rapidly prototype and ship impactful products from start to finish, including cross-platform 
             apps and services. Was awarded Forbes 30 Under 30 for social entrepreneurship.
           </p>
-          <p className="text-gray-400 text-base animate-pulse mt-4">
-            ✨ Click on the Software Engineer, Educator, or Movement Builder bubbles to explore my journey in each role
-          </p>
+          <button 
+            onClick={scrollToPersonas}
+            className="text-gray-400 text-base hover:text-accent1 transition-colors cursor-pointer animate-pulse mt-4"
+          >
+            ✨ Click on the Software Engineer, Educator, or Movement Builder bubbles to explore each persona that makes up my DevRel journey
+          </button>
         </div>
       </Card>
     </div>

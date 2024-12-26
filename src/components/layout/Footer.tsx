@@ -44,7 +44,7 @@ export function Footer() {
               </a>
             </div>
           </div>
-          <div>
+          <div id="contact">
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
             <p className="text-muted-foreground">
               Feel free to DM me on{' '}

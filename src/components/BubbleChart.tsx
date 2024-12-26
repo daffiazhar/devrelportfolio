@@ -96,6 +96,10 @@ export function BubbleChart({ className, selectedPersona, onSelectPersona, onSel
   const svgRef = useRef<SVGSVGElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
+  const scrollToPersonas = () => {
+    document.getElementById('personas')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   useEffect(() => {
     if (!svgRef.current || !containerRef.current) return;
 
@@ -327,9 +331,12 @@ export function BubbleChart({ className, selectedPersona, onSelectPersona, onSel
       />
       {!selectedPersona && !isMainSelected && (
         <div className="absolute bottom-4 left-0 right-0 text-center">
-          <p className="text-gray-500 text-sm animate-pulse">
-            ☝️ Click a bubble to explore each role
-          </p>
+          <button 
+            onClick={scrollToPersonas}
+            className="text-gray-500 text-sm hover:text-accent1 transition-colors cursor-pointer animate-pulse"
+          >
+            ☝️ Click a bubble to explore each persona that makes up my DevRel journey
+          </button>
         </div>
       )}
     </div>
