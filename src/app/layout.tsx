@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/meta.png",
-        width: 1806,
-        height: 1154,
+        width: 1788,
+        height: 1370,
         alt: "Gary Sheng's DevRel Portfolio"
       }
     ]

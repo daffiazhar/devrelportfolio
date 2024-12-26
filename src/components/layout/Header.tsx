@@ -1,7 +1,6 @@
 import { cn } from '@/lib/utils';
 import { Navigation } from '@/components/Navigation';
 import { MobileNav } from '@/components/MobileNav';
-import { portfolioData } from '@/config/portfolio-data';
 import type { PersonaId } from '@/types/portfolio';
 
 interface HeaderProps {
