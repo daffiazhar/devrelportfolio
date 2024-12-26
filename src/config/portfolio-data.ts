@@ -6,7 +6,7 @@ export const portfolioData: Record<Persona['id'], Persona> = {
     title: 'Software Engineer',
     emoji: '👨‍💻',
     color: 'rgba(99, 102, 241, 1)',
-    description: 'Building tools and platforms that empower developers to create amazing experiences.',
+    description: 'Who loves coding and shows fellow developers how to build their best work',
     inspirations: [
       {
         name: 'Guillermo Rauch',
@@ -85,7 +85,7 @@ export const portfolioData: Record<Persona['id'], Persona> = {
     title: 'Educator',
     emoji: '👨‍🏫',
     color: 'rgba(139, 92, 246, 1)',
-    description: 'Empowering the next generation of developers through mentorship and education.',
+    description: 'Who creates content that makes it easier to adopt new technologies.',
     inspirations: [
       {
         name: 'Jesse Michels',
@@ -181,7 +181,7 @@ export const portfolioData: Record<Persona['id'], Persona> = {
     title: 'Movement Builder',
     emoji: '🔥',
     color: 'rgba(236, 72, 153, 1)',
-    description: 'Creating communities and initiatives that drive positive change in tech.',
+    description: 'Who creates communities and events that inspire thousands to get involved',
     inspirations: [
       {
         name: 'Vitalik Buterin',

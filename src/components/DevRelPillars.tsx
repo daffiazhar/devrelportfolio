@@ -37,9 +37,9 @@ export function DevRelPillars() {
   return (
     <div className="py-12 px-4">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold mb-3">DevRel Pillars ✨</h2>
+        <h2 className="text-3xl font-bold mb-3">The Pillars of Amazing DevRel 🏛️</h2>
         <p className="text-gray-400 max-w-2xl mx-auto">
-          My approach: exceptional docs, genuine community engagement, and continuous exploration.
+          In my view, the pillars of amazing DevRel are exceptional docs and content, continous community and product team engagement, and continuous exploration to make sure we are always learning and improving for the sake of helping developers.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">

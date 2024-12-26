@@ -6,7 +6,10 @@ export function MainBubbleBio() {
   };
 
   return (
-    <div className="mt-12">
+    <div 
+      id="persona-details"
+      className="mt-12"
+    >
       <Card className="p-8 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20">
         <div className="flex flex-col items-center text-center space-y-6">
           <h2 className="text-3xl font-bold">👋 Hi, I&apos;m Gary</h2>
