@@ -12,8 +12,6 @@ export function Header({ className, onSelectPersona }: HeaderProps) {
   const handlePersonaClick = (id: PersonaId) => {
     if (onSelectPersona) {
       onSelectPersona(id);
-      // Scroll to personas section
-      document.getElementById('personas')?.scrollIntoView({ behavior: 'smooth' });
     }
   };
 

@@ -159,7 +159,8 @@ export const portfolioData: Record<Persona['id'], Persona> = {
         title: 'America 2.0 Substack',
         description: 'Publishing a weekly Substack exploring paths to accelerate humanity towards a Golden Age. Built an engaged audience of 500+ readers, focusing on concepts like democratizing human flourishing, Society Stack, and foundational technologies for local resilience.',
         date: '2024',
-        tags: ['Digital Publishing', 'Future Studies', 'Systems Thinking', 'Societal Innovation']
+        tags: ['Digital Publishing', 'Future Studies', 'Systems Thinking', 'Societal Innovation'],
+        link: 'https://substack.garysheng.com'
       },
       {
         title: 'Co-Founder & Chief Innovation Officer at Civics Unplugged',
@@ -221,7 +222,8 @@ export const portfolioData: Record<Persona['id'], Persona> = {
         title: 'Zuzalu Ecosystem Contributor',
         description: 'Early contributor to the Zuzalu ecosystem, helping pioneer the concept of popup villages and innovative community living experiments.',
         date: '2024',
-        tags: ['Community Design', 'Innovation', 'Future Cities']
+        tags: ['Community Design', 'Innovation', 'Future Cities'],
+        link: 'https://www.palladiummag.com/2023/10/06/why-i-built-zuzalu/'
       },
       {
         title: 'Web3 Impact Community Builder',

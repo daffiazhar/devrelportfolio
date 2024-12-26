@@ -43,6 +43,15 @@ export function ExperienceTimeline({ experiences }: ExperienceTimelineProps) {
                         >
                           {experience.title}
                         </a>
+                      ) : experience.link ? (
+                        <a 
+                          href={experience.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="hover:text-accent1 transition-colors"
+                        >
+                          {experience.title}
+                        </a>
                       ) : (
                         experience.title
                       )}

@@ -41,6 +41,7 @@ export function PersonaSection({ selectedPersona, onSelectPersona, isMainSelecte
   return (
     <div className="mt-12 space-y-8">
       <div 
+        id="persona-details"
         className="rounded-lg p-8 transition-colors duration-300"
         style={{
           backgroundColor: `${currentPersona.color.replace('1)', '0.1)')}`,
@@ -49,30 +50,34 @@ export function PersonaSection({ selectedPersona, onSelectPersona, isMainSelecte
         }}
       >
         <div className="flex items-center justify-between mb-8">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={handlePrevious}
-            disabled={!hasPrevious}
-            className="mr-4"
-          >
-            <ChevronLeftIcon className="h-8 w-8" />
-          </Button>
+          {hasPrevious && (
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={handlePrevious}
+              className="mr-4"
+            >
+              <ChevronLeftIcon className="h-8 w-8" />
+            </Button>
+          )}
+          {!hasPrevious && <div className="w-12 mr-4" />}
           <div className="flex-1 text-center">
             <h2 className="text-4xl font-bold mb-4">
               {currentPersona.emoji} {currentPersona.title}
             </h2>
             <p className="text-xl text-gray-400">{currentPersona.description}</p>
           </div>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={handleNext}
-            disabled={!hasNext}
-            className="ml-4"
-          >
-            <ChevronRightIcon className="h-8 w-8" />
-          </Button>
+          {hasNext && (
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={handleNext}
+              className="ml-4"
+            >
+              <ChevronRightIcon className="h-8 w-8" />
+            </Button>
+          )}
+          {!hasNext && <div className="w-12 ml-4" />}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

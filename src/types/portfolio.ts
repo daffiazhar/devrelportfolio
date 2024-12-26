@@ -10,6 +10,7 @@ export interface Experience {
   description: string;
   date: string;
   tags: string[];
+  link?: string;
 }
 
 export interface Persona {
