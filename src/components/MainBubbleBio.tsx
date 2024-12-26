@@ -11,17 +11,18 @@ export function MainBubbleBio() {
         <div className="flex flex-col items-center text-center space-y-6">
           <h2 className="text-3xl font-bold">👋 Hi, I&apos;m Gary</h2>
           <p className="text-lg text-gray-300 max-w-2xl leading-relaxed">
-            Entrepreneurial, ex-Google software engineer with a BS in Computer Science from Duke University. 
-            Based in the US with a passion for creating innovative tools and systems that empower individuals and communities. 
-            Well connected in crypto, AI, and impact sectors, currently focused on front-end development with React / Next.js 
-            and leveraging AI to rapidly prototype and ship impactful products from start to finish, including cross-platform 
-            apps and services. Was awarded Forbes 30 Under 30 for social entrepreneurship.
+            I&apos;m a unique blend of software engineer, educator, and movement builder - three personas that combine 
+            to create an ideal skillset for supercharging developer ecosystems. My engineering background from Google 
+            and Duke gives me deep technical credibility, while my experience as an educator helps me make complex 
+            concepts accessible and engaging. As a movement builder, I understand how to cultivate thriving communities 
+            and drive adoption. This combination allows me to not just build great developer tools, but to teach 
+            their value effectively and build passionate communities around them.
           </p>
           <button 
             onClick={scrollToPersonas}
             className="text-gray-400 text-base hover:text-accent1 transition-colors cursor-pointer animate-pulse mt-4"
           >
-            ✨ Click on the Software Engineer, Educator, or Movement Builder bubbles to explore each persona that makes up my DevRel journey
+            ✨ Click on the Software Engineer, Educator, or Movement Builder bubbles to explore how each persona contributes to my DevRel approach
           </button>
         </div>
       </Card>
