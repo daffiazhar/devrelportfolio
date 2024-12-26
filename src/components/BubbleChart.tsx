@@ -178,7 +178,7 @@ export function BubbleChart({ className, selectedPersona, onSelectPersona, onSel
       .attr('height', '200%');
 
     filter.append('feGaussianBlur')
-      .attr('stdDeviation', '3')
+      .attr('stdDeviation', '4')
       .attr('result', 'coloredBlur');
 
     const feMerge = filter.append('feMerge');
@@ -235,7 +235,15 @@ export function BubbleChart({ className, selectedPersona, onSelectPersona, onSel
         }
       });
 
-    // Add circles to nodes
+    // Add stroke circles (for hover effect)
+    nodeElements.append('circle')
+      .attr('r', d => d.size / 2 + 1.5) // Slightly larger than the main circle
+      .attr('fill', 'none')
+      .attr('stroke', 'white')
+      .attr('stroke-width', '3')
+      .attr('class', 'opacity-0 transition-opacity duration-300 group-hover:opacity-100');
+
+    // Add main circles to nodes
     nodeElements.append('circle')
       .attr('r', d => d.size / 2)
       .attr('fill', d => {
@@ -256,6 +264,9 @@ export function BubbleChart({ className, selectedPersona, onSelectPersona, onSel
       })
       .attr('class', 'transition-all duration-300');
 
+    // Add group class for hover effect
+    nodeElements.attr('class', 'group cursor-pointer');
+
     // Add profile image for main node
     nodeElements.filter(d => d.type === 'main')
       .append('image')
@@ -264,7 +275,8 @@ export function BubbleChart({ className, selectedPersona, onSelectPersona, onSel
       .attr('height', MAIN_NODE.size)
       .attr('x', -MAIN_NODE.size / 2)
       .attr('y', -MAIN_NODE.size / 2)
-      .attr('clip-path', 'url(#circle-clip)');
+      .attr('clip-path', 'url(#circle-clip)')
+      .attr('class', 'pointer-events-none');
 
     // Add emojis to persona nodes only
     nodeElements.filter(d => d.type === 'persona')
@@ -272,7 +284,7 @@ export function BubbleChart({ className, selectedPersona, onSelectPersona, onSel
       .text(d => d.emoji)
       .attr('text-anchor', 'middle')
       .attr('dy', '-1.2em')
-      .attr('class', 'text-2xl');
+      .attr('class', 'text-2xl pointer-events-none');
 
     // Add labels to nodes with line wrapping
     nodeElements.selectAll('.label')
@@ -292,7 +304,7 @@ export function BubbleChart({ className, selectedPersona, onSelectPersona, onSel
         return `${centerOffset + (d.i * lineHeight) + 24}px`;
       })
       .attr('fill', 'currentColor')
-      .attr('class', 'text-lg font-medium');
+      .attr('class', 'text-lg font-medium pointer-events-none');
 
     // Update positions on simulation tick
     simulation.on('tick', () => {

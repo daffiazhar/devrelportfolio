@@ -24,7 +24,7 @@ export default function Home() {
 
   return (
     <>
-      <Header />
+      <Header onSelectPersona={handleSelectPersona} />
       <main className="min-h-screen">
         <section id="personas" className="pt-24 px-6">
           <BubbleChart 
