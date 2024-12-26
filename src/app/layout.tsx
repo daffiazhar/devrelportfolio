@@ -7,23 +7,23 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Gary Sheng | DevRel Portfolio",
+  title: "Gary Sheng's DevRel Portfolio",
   description: "Software Engineer, Educator, and Movement Builder passionate about empowering developers and building impactful communities.",
   openGraph: {
-    title: "Gary Sheng | DevRel Portfolio",
+    title: "Gary Sheng's DevRel Portfolio",
     description: "Software Engineer, Educator, and Movement Builder passionate about empowering developers and building impactful communities.",
     images: [
       {
         url: "/meta.png",
         width: 1806,
         height: 1154,
-        alt: "Gary Sheng DevRel Portfolio"
+        alt: "Gary Sheng's DevRel Portfolio"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gary Sheng | DevRel Portfolio",
+    title: "Gary Sheng's DevRel Portfolio",
     description: "Software Engineer, Educator, and Movement Builder passionate about empowering developers and building impactful communities.",
     images: ["/meta.png"]
   }
