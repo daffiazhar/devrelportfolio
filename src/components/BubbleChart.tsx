@@ -241,7 +241,15 @@ export function BubbleChart({ className, selectedPersona, onSelectPersona, onSel
       .attr('fill', 'none')
       .attr('stroke', 'white')
       .attr('stroke-width', '3')
-      .attr('class', 'opacity-0 transition-opacity duration-300 group-hover:opacity-100');
+      .attr('class', d => {
+        if (d.type === 'main' && isMainSelected) {
+          return 'opacity-100 transition-opacity duration-300';
+        }
+        if (d.type === 'persona' && selectedPersona === d.id) {
+          return 'opacity-100 transition-opacity duration-300';
+        }
+        return 'opacity-0 transition-opacity duration-300 group-hover:opacity-100';
+      });
 
     // Add main circles to nodes
     nodeElements.append('circle')

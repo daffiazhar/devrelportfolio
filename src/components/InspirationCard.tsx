@@ -25,14 +25,17 @@ export function InspirationCard({ inspiration, className }: InspirationCardProps
           <p className="text-gray-400 text-sm">{inspiration.role}</p>
         </div>
       </div>
-      <ul className="space-y-2">
-        {inspiration.lessons.map((lesson, index) => (
-          <li key={index} className="text-gray-300 text-sm flex items-start gap-2">
-            <span className="text-primary mt-1">•</span>
-            <span>{lesson}</span>
-          </li>
-        ))}
-      </ul>
+      <div className="space-y-3">
+        <h4 className="text-sm font-medium text-accent1">Top Actionable Lessons I Learned:</h4>
+        <ul className="space-y-2">
+          {inspiration.lessons.map((lesson, index) => (
+            <li key={index} className="text-gray-300 text-sm flex items-start gap-2">
+              <span className="text-accent1 mt-1">•</span>
+              <span>{lesson}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </Card>
   );
 } 

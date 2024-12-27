@@ -3,7 +3,7 @@ import { Card } from '@/components/ui/card';
 const pillars = [
   {
     id: 'community',
-    description: 'Build and nurture vibrant developer communities through genuine connections.',
+    description: 'Build genuine connections with developers who are passionate about your tools.',
     emoji: '🤝',
     color: 'from-violet-500 to-violet-700'
   },
@@ -22,14 +22,20 @@ const pillars = [
   {
     id: 'content',
     description: 'Produce engaging technical content that educates and inspires developers.',
-    emoji: '✍️',
+    emoji: '🔥',
     color: 'from-purple-500 to-purple-700'
   },
   {
     id: 'research',
-    description: 'Explore state-of-the-art tools to stay ahead of developer experience trends.',
-    emoji: '🔍',
+    description: 'Explore state-of-the-art tools to stay ahead of industry and developer experience trends.',
+    emoji: '🔍', 
     color: 'from-pink-500 to-pink-700'
+  },
+  {
+    id: 'rewards',
+    description: 'Reward developers who create outstanding content and applications with your tools.',
+    emoji: '🎁',
+    color: 'from-rose-500 to-rose-700'
   }
 ];
 

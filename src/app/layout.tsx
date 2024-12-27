@@ -7,6 +7,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://devrel.garysheng.com'),
   title: "Gary Sheng's DevRel Portfolio",
   description: "Software Engineer, Educator, and Movement Builder passionate about empowering developers and building impactful communities.",
   openGraph: {

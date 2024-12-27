@@ -55,25 +55,25 @@ export const portfolioData: Record<Persona['id'], Persona> = {
     ],
     experiences: [
       {
-        title: 'Gauntlet AI Training Program',
+        title: '🤖 Gauntlet AI Training Program',
         description: 'Selected for an intensive 12-week AI engineering program in Austin, combining rapid application development with advanced AI integration. The program focuses on building production-grade applications using modern AI tools and architecting systems that leverage multiple AI services.',
         date: '2025',
         tags: ['AI Engineering', 'System Architecture', 'Production Development']
       },
       {
-        title: 'BlessOut - Cross-Platform eCard App',
+        title: '💌 BlessOut - Cross-Platform eCard App',
         description: 'Developed and launched a full-stack eCard application with web and mobile versions. Successfully deployed to iOS and Android app stores, demonstrating expertise in modern web and mobile development technologies.',
         date: '2024',
         tags: ['Next.js', 'Firebase', 'React Native', 'Expo', 'Cross-Platform Development']
       },
       {
-        title: 'AI-Powered Development Exploration',
+        title: '🔮 AI-Powered Development Exploration',
         description: 'Focused on experimenting with AI-powered IDEs and building user interfaces that reduce cognitive load and typing demands. Deepening expertise in modern software engineering practices and AI integration.',
         date: '2024',
         tags: ['AI Integration', 'UI/UX', 'Modern Development']
       },
       {
-        title: 'Frontend Engineering Team Lead at Google Cloud',
+        title: '☁️ Frontend Engineering Team Lead at Google Cloud',
         description: 'Led a team focused on building the frontend of Cloud SQL. Gained deep insights into the importance of developer infrastructure, documentation, and user-centric product development for driving adoption.',
         date: '2015-2019',
         tags: ['Google Cloud', 'Frontend Development', 'Team Leadership', 'Developer Experience']
@@ -156,20 +156,20 @@ export const portfolioData: Record<Persona['id'], Persona> = {
     ],
     experiences: [
       {
-        title: 'America 2.0 Substack',
+        title: '🇺🇸 America 2.0 Substack',
         description: 'Publishing a weekly Substack exploring paths to accelerate humanity towards a Golden Age. Built an engaged audience of 500+ readers, focusing on concepts like democratizing human flourishing, Society Stack, and foundational technologies for local resilience.',
         date: '2024',
         tags: ['Digital Publishing', 'Future Studies', 'Systems Thinking', 'Societal Innovation'],
         link: 'https://substack.garysheng.com'
       },
       {
-        title: 'Co-Founder & Chief Innovation Officer at Civics Unplugged',
+        title: '🗽 Co-Founder & Chief Innovation Officer at Civics Unplugged',
         description: 'Built first curriculum, designed mentorship program, and led cultivation of global, digital-first community of young civic innovators now consisting of 2000+ alumni across 80+ countries. Created Dream DAO to train students on web3 for positive impact. Honored by Forbes 30 Under 30.',
         date: '2019-2022',
         tags: ['Community Building', 'Curriculum Design', 'Web3 Education', 'Youth Empowerment']
       },
       {
-        title: 'Cultural Commentary on TikTok',
+        title: '🎥 Cultural Commentary on TikTok',
         description: 'Built an audience of 130,000+ followers in a few months through engaging content focused on centrist and independent politics, demonstrating ability to connect with Gen-Z audience on complex topics.',
         date: '2022',
         tags: ['Social Media Education', 'Political Discourse', 'Digital Content Creation']
@@ -207,7 +207,7 @@ export const portfolioData: Record<Persona['id'], Persona> = {
       },
       {
         name: 'Vivek Ramaswamy',
-        role: 'Founder of Roivant & Strive',
+        role: 'Founder of Roivant & Strive; Co-founder of DOGE',
         image: '/inspirations/vivek-ramaswamy.jpg',
         lessons: [
           'Be contrarian but right - challenge consensus with solid reasoning',
@@ -219,38 +219,38 @@ export const portfolioData: Record<Persona['id'], Persona> = {
     ],
     experiences: [
       {
-        title: 'Zuzalu Ecosystem Contributor',
+        title: '🏘️ Zuzalu Ecosystem Contributor',
         description: 'Early contributor to the Zuzalu ecosystem, helping pioneer the concept of popup villages and innovative community living experiments.',
         date: '2024',
         tags: ['Community Design', 'Innovation', 'Future Cities'],
         link: 'https://www.palladiummag.com/2023/10/06/why-i-built-zuzalu/'
       },
       {
-        title: 'Web3 Impact Community Builder',
+        title: '🌱 Web3 Impact Community Builder',
         description: 'Actively contributed to popularizing the convergence of web3 and social impact through regular content creation and supporting early-stage projects at the intersection of crypto and social good.',
         date: '2022-2024',
         tags: ['Web3', 'Social Impact', 'Community Building', 'Content Creation']
       },
       {
-        title: 'Co-Founder of Dancing Pineapple',
+        title: '🍍 Co-Founder of Dancing Pineapple',
         description: 'Created and grew a feel-good electronic music brand that promoted artists across four continents. Produced 24 concerts in NYC and LA, helping launch artists who later performed at major festivals like Coachella and EDC Vegas. Curated therapeutic electronic music that resonated deeply with audiences.',
         date: '2015-2019',
         tags: ['Music Curation', 'Event Production', 'Artist Development', 'Brand Building']
       },
       {
-        title: 'Criminal Justice Reform Advocate',
+        title: '⚖️ Criminal Justice Reform Advocate',
         description: 'Built and grew a Facebook page from scratch to 800,000 followers, focused on criminal justice reform and raising awareness about key issues.',
         date: '2017',
         tags: ['Digital Advocacy', 'Social Justice', 'Community Growth']
       },
       {
-        title: 'College Dance Team Leader',
+        title: '🕺🏻 College Dance Team Leader',
         description: 'Led a premier dance team that consistently packed the largest campus auditorium for showcases, demonstrating early leadership in community building through arts and performance.',
         date: 'College',
         tags: ['Leadership', 'Performance Arts', 'Event Organization']
       },
       {
-        title: 'High School Community Builder',
+        title: '🎮 High School Community Builder',
         description: 'Organized and negotiated sanctioned campus dance parties and LAN gaming events, bringing together different student communities through shared experiences.',
         date: 'High School',
         tags: ['Event Planning', 'Community Building', 'Gaming Culture']

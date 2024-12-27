@@ -10,7 +10,7 @@ import type { PersonaId } from '@/types/portfolio';
 
 export default function Home() {
   const [selectedPersona, setSelectedPersona] = useState<PersonaId | null>(null);
-  const [isMainSelected, setIsMainSelected] = useState(false);
+  const [isMainSelected, setIsMainSelected] = useState(true);
 
   const scrollToPersonaDetails = () => {
     const element = document.getElementById('persona-details');
