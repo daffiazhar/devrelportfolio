@@ -69,26 +69,47 @@ function updateNodePositions(
   educatorNode: Node | undefined,
   movementBuilderNode: Node | undefined
 ) {
+  const isMobile = width < 500; // Standard mobile breakpoint
+  
+  // Mobile position multipliers - easy to tweak
+  const mobileMultipliers = {
+    engineer: { x: 0.20, y: 0.4 },
+    educator: { x: 0.30, y: 0.67 },
+    movementBuilder: { x: 0.85, y: 0.75 },
+    main: { x: 0.70, y: 0.15 }
+  };
+
+  // Desktop position multipliers - unchanged from original
+  const desktopMultipliers = {
+    engineer: { x: 0.27, y: 0.2 },
+    educator: { x: 0.20, y: 0.51 },
+    movementBuilder: { x: 0.35, y: 0.75 },
+    main: { x: 0.75, y: 0.15 }
+  };
+
+  // Use appropriate multipliers based on screen size
+  const multipliers = isMobile ? mobileMultipliers : desktopMultipliers;
+
   // Main node position
-  mainNode.fx = width * 0.75;
-  mainNode.fy = height * 0.15;
+  mainNode.fx = width * multipliers.main.x;
+  mainNode.fy = height * multipliers.main.y;
 
   // Engineer node position
   if (engineerNode) {
-    engineerNode.fx = width * 0.27;
-    engineerNode.fy = height * 0.2;
+    engineerNode.fx = width * multipliers.engineer.x;
+    engineerNode.fy = height * multipliers.engineer.y;
   }
 
   // Educator node position
   if (educatorNode) {
-    educatorNode.fx = width * 0.20;
-    educatorNode.fy = height * 0.49;
+    educatorNode.fx = width * multipliers.educator.x;
+    educatorNode.fy = height * multipliers.educator.y;
   }
 
   // Movement Builder node position
   if (movementBuilderNode) {
-    movementBuilderNode.fx = width * 0.35;
-    movementBuilderNode.fy = height * 0.75;
+    movementBuilderNode.fx = width * multipliers.movementBuilder.x;
+    movementBuilderNode.fy = height * multipliers.movementBuilder.y;
   }
 }
 
