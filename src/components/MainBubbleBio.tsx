@@ -1,8 +1,19 @@
 import { Card } from '@/components/ui/card';
+import type { PersonaId } from '@/types/portfolio';
 
-export function MainBubbleBio() {
+interface MainBubbleBioProps {
+  onSelectPersona?: (id: PersonaId) => void;
+}
+
+export function MainBubbleBio({ onSelectPersona }: MainBubbleBioProps) {
   const scrollToPersonas = () => {
     document.getElementById('personas')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handlePersonaClick = (id: PersonaId) => {
+    if (onSelectPersona) {
+      onSelectPersona(id);
+    }
   };
 
   return (
@@ -12,13 +23,28 @@ export function MainBubbleBio() {
     >
       <Card className="p-8 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20">
         <div className="flex flex-col items-center text-center space-y-6">
-          <h2 className="text-3xl font-bold">👋 Hi, I&apos;m Gary</h2>
+          <h2 className="text-3xl font-bold">👋 Hi, I'm Gary</h2>
           <div className="text-lg text-gray-300 max-w-2xl space-y-4">
             <p>
-              I&apos;m a unique blend of{' '}
-              <span className="text-[#6366F1] bg-[#6366F1]/10 px-1 rounded">software engineer</span>,{' '}
-              <span className="text-[#8B5CF6] bg-[#8B5CF6]/10 px-1 rounded">educator</span>, and{' '}
-              <span className="text-[#EC4899] bg-[#EC4899]/10 px-1 rounded">movement builder</span>{' '}
+              I'm a unique blend of{' '}
+              <button 
+                onClick={() => handlePersonaClick('engineer')}
+                className="text-[#6366F1] bg-[#6366F1]/10 px-1 rounded hover:bg-[#6366F1]/20 transition-colors"
+              >
+                software engineer
+              </button>,{' '}
+              <button 
+                onClick={() => handlePersonaClick('educator')}
+                className="text-[#8B5CF6] bg-[#8B5CF6]/10 px-1 rounded hover:bg-[#8B5CF6]/20 transition-colors"
+              >
+                educator
+              </button>, and{' '}
+              <button 
+                onClick={() => handlePersonaClick('movement-builder')}
+                className="text-[#EC4899] bg-[#EC4899]/10 px-1 rounded hover:bg-[#EC4899]/20 transition-colors"
+              >
+                movement builder
+              </button>{' '}
               - three personas that combine to create an ideal skillset for supercharging developer ecosystems.
             </p>
             <p>

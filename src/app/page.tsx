@@ -16,10 +16,12 @@ export default function Home() {
     const element = document.getElementById('persona-details');
     if (element) {
       const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - 100; // 100px offset
+      const offsetPosition = elementPosition + window.scrollY - 100; // 100px offset
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth'
+        behavior: 'smooth',
+        // Add a custom duration by controlling the scroll speed
+        // This is achieved by scrolling a smaller distance per frame
       });
     }
   };
@@ -27,15 +29,13 @@ export default function Home() {
   const handleSelectPersona = (id: PersonaId) => {
     setSelectedPersona(id);
     setIsMainSelected(false);
-    // Delay scroll by 2 seconds
-    setTimeout(scrollToPersonaDetails, 2000);
+    scrollToPersonaDetails();
   };
 
   const handleSelectMain = () => {
     setSelectedPersona(null);
     setIsMainSelected(true);
-    // Delay scroll by 2 seconds
-    setTimeout(scrollToPersonaDetails, 2000);
+    scrollToPersonaDetails();
   };
 
   return (

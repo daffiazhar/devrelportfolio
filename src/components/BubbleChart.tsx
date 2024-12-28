@@ -69,20 +69,20 @@ function updateNodePositions(
   educatorNode: Node | undefined,
   movementBuilderNode: Node | undefined
 ) {
-  const isMobile = width < 500; // Standard mobile breakpoint
+  const isMobile = width < 450; // Tighter mobile breakpoint
   
   // Mobile position multipliers - easy to tweak
   const mobileMultipliers = {
     engineer: { x: 0.20, y: 0.4 },
-    educator: { x: 0.30, y: 0.67 },
-    movementBuilder: { x: 0.85, y: 0.75 },
+    educator: { x: 0.40, y: 0.67 },
+    movementBuilder: { x: 0.80, y: 0.88 },
     main: { x: 0.70, y: 0.15 }
   };
 
   // Desktop position multipliers - unchanged from original
   const desktopMultipliers = {
     engineer: { x: 0.27, y: 0.2 },
-    educator: { x: 0.20, y: 0.51 },
+    educator: { x: 0.20, y: 0.49 },
     movementBuilder: { x: 0.35, y: 0.75 },
     main: { x: 0.75, y: 0.15 }
   };

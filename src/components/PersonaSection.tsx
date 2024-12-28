@@ -18,7 +18,7 @@ export function PersonaSection({ selectedPersona, onSelectPersona, isMainSelecte
   if (!selectedPersona && !isMainSelected) return null;
   
   if (isMainSelected) {
-    return <MainBubbleBio />;
+    return <MainBubbleBio onSelectPersona={onSelectPersona} />;
   }
 
   const currentPersona = portfolioData[selectedPersona!];
@@ -86,6 +86,13 @@ export function PersonaSection({ selectedPersona, onSelectPersona, isMainSelecte
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <section>
             <h3 className="text-2xl font-semibold mb-6">
+              My {currentPersona.title}-Related Experiences
+            </h3>
+            <ExperienceTimeline experiences={currentPersona.experiences} />
+          </section>
+
+          <section>
+            <h3 className="text-2xl font-semibold mb-6">
               My {currentPersona.title} Inspirations
             </h3>
             <div className="space-y-6">
@@ -93,13 +100,6 @@ export function PersonaSection({ selectedPersona, onSelectPersona, isMainSelecte
                 <InspirationCard key={index} inspiration={inspiration} />
               ))}
             </div>
-          </section>
-
-          <section>
-            <h3 className="text-2xl font-semibold mb-6">
-              My {currentPersona.title}-Related Experiences
-            </h3>
-            <ExperienceTimeline experiences={currentPersona.experiences} />
           </section>
         </div>
       </div>
