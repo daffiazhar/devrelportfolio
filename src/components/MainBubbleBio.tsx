@@ -23,10 +23,10 @@ export function MainBubbleBio({ onSelectPersona }: MainBubbleBioProps) {
     >
       <Card className="p-8 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20">
         <div className="flex flex-col items-center text-center space-y-6">
-          <h2 className="text-3xl font-bold">👋 Hi, I'm Gary</h2>
+          <h2 className="text-3xl font-bold">👋 Hi, I&apos;m Gary</h2>
           <div className="text-lg text-gray-300 max-w-2xl space-y-4">
             <p>
-              I'm a unique blend of{' '}
+              I&apos;m a unique blend of{' '}
               <button 
                 onClick={() => handlePersonaClick('engineer')}
                 className="text-[#6366F1] bg-[#6366F1]/10 px-1 rounded hover:bg-[#6366F1]/20 transition-colors"

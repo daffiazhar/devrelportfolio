@@ -1,5 +1,4 @@
 import { Card } from '@/components/ui/card';
-import Image from 'next/image';
 import type { PersonaInspiration } from '@/types/portfolio';
 
 interface InspirationCardProps {
