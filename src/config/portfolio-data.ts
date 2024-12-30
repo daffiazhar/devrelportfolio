@@ -67,10 +67,31 @@ export const portfolioData: Record<Persona['id'], Persona> = {
         tags: ['Next.js', 'Firebase', 'React Native', 'Expo', 'Cross-Platform Development']
       },
       {
+        title: '🧠 Ano.so - Voice Memory App',
+        description: 'Building a voice-first app that helps people capture life\'s meaningful moments, remember the people they meet, and keep their memories alive through simple voice recordings.',
+        date: '2024',
+        tags: ['Next.js', 'Voice Tech', 'Mobile-First', 'UX Design'],
+        link: 'https://ano.so'
+      },
+      {
         title: '🔮 AI-Powered Development Exploration',
         description: 'Focused on experimenting with AI-powered IDEs and building user interfaces that reduce cognitive load and typing demands. Deepening expertise in modern software engineering practices and AI integration.',
         date: '2024',
         tags: ['AI Integration', 'UI/UX', 'Modern Development']
+      },
+      {
+        title: '🎙️ PodcastsForYou - AI Newsletter-to-Podcast Platform',
+        description: 'Building an AI-powered platform that transforms unread newsletters into personalized podcast briefings. Using advanced AI for content analysis, summarization, and natural voice synthesis to help busy professionals stay informed efficiently.',
+        date: '2024',
+        tags: ['Next.js', 'AI/ML', 'Voice Synthesis', 'Content Processing'],
+        link: 'https://podcastsforyou.com'
+      },
+      {
+        title: '🪙 Product Consultant for Web3 Platforms',
+        description: 'Consulted on growth and product strategy for major web3 platforms: Scaled Gitcoin Passport from 200k to 1M users, co-architected Guild.xyz\'s v3 API relaunch, and designed Flow State\'s product and go-to-market strategy. Demonstrated ability to drive significant user growth and product improvements across multiple platforms.',
+        date: '2022-Current',
+        tags: ['Product Strategy', 'Web3', 'Growth', 'API Design', 'Go-to-Market'],
+        link: 'https://passport.xyz'
       },
       {
         title: '☁️ Frontend Engineering Team Lead at Google Cloud',
