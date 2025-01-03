@@ -13,17 +13,35 @@ export default function Home() {
   const [isMainSelected, setIsMainSelected] = useState(true);
 
   const scrollToPersonaDetails = () => {
-    const element = document.getElementById('persona-details');
-    if (element) {
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.scrollY - 100; // 100px offset
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-        // Add a custom duration by controlling the scroll speed
-        // This is achieved by scrolling a smaller distance per frame
-      });
-    }
+    setTimeout(() => {
+      const element = document.getElementById('persona-details');
+      if (element) {
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - 100;
+        
+        const duration = 1500; // 1.5 seconds
+        const startPosition = window.scrollY;
+        const distance = offsetPosition - startPosition;
+        const startTime = performance.now();
+
+        const easeInOutQuad = (t: number) => {
+          return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+        };
+
+        const scroll = (currentTime: number) => {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+
+          window.scrollTo(0, startPosition + distance * easeInOutQuad(progress));
+
+          if (progress < 1) {
+            requestAnimationFrame(scroll);
+          }
+        };
+
+        requestAnimationFrame(scroll);
+      }
+    }, 100); // Small delay to ensure state updates have completed
   };
 
   const handleSelectPersona = (id: PersonaId) => {
