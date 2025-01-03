@@ -68,9 +68,9 @@ export const portfolioData: Record<Persona['id'], Persona> = {
       },
       {
         title: '🧠 Ano.so - Voice Memory App',
-        description: 'Building a voice-first app that helps people capture life\'s meaningful moments, remember the people they meet, and keep their memories alive through simple voice recordings.',
-        date: '2024',
-        tags: ['Next.js', 'Voice Tech', 'Mobile-First', 'UX Design'],
+        description: 'Building a voice-first app that helps people capture and relive meaningful moments through simple voice recordings. The app focuses on making memory capture effortless and natural, while using AI to help users organize, search, and rediscover their memories. Features include quick voice memos, smart tagging, and intuitive memory browsing.',
+        date: '2024-Current',
+        tags: ['Next.js', 'Voice Tech', 'Mobile-First', 'UX Design', 'AI/ML', 'Memory Tech'],
         link: 'https://ano.so'
       },
       {
@@ -80,11 +80,18 @@ export const portfolioData: Record<Persona['id'], Persona> = {
         tags: ['AI Integration', 'UI/UX', 'Modern Development']
       },
       {
-        title: '🎙️ PodcastsForYou - AI Newsletter-to-Podcast Platform',
+        title: '🎙️ PodForYou - AI Newsletter-to-Podcast Platform',
         description: 'Building an AI-powered platform that transforms unread newsletters into personalized podcast briefings. Using advanced AI for content analysis, summarization, and natural voice synthesis to help busy professionals stay informed efficiently.',
         date: '2024',
         tags: ['Next.js', 'AI/ML', 'Voice Synthesis', 'Content Processing'],
         link: 'https://podcastsforyou.com'
+      },
+      {
+        title: '🤖 Jakki.ai - Community-Led Social Media Bot',
+        description: 'Created a Telegram bot that empowers communities to collaboratively manage their social media presence. Features include democratic content proposal and voting, AI-powered post suggestions, caption competitions, and multi-platform posting to X and Farcaster. Built to make community-driven content creation fun and engaging.',
+        date: '2024-Current',
+        tags: ['Telegram Bot', 'Social Media', 'Community Tools', 'AI Integration', 'Web3'],
+        link: 'https://www.jakki.ai'
       },
       {
         title: '🪙 Product Consultant for Web3 Platforms',
@@ -98,7 +105,7 @@ export const portfolioData: Record<Persona['id'], Persona> = {
         description: 'Led a team focused on building the frontend of Cloud SQL. Gained deep insights into the importance of developer infrastructure, documentation, and user-centric product development for driving adoption.',
         date: '2015-2019',
         tags: ['Google Cloud', 'Frontend Development', 'Team Leadership', 'Developer Experience']
-      }
+      },
     ]
   },
   'educator': {
