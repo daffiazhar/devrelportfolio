@@ -27,14 +27,18 @@ export default function Home() {
   };
 
   const handleSelectPersona = (id: PersonaId) => {
-    setSelectedPersona(id);
-    setIsMainSelected(false);
+    requestAnimationFrame(() => {
+      setSelectedPersona(id);
+      setIsMainSelected(false);
+    });
     scrollToPersonaDetails();
   };
 
   const handleSelectMain = () => {
-    setSelectedPersona(null);
-    setIsMainSelected(true);
+    requestAnimationFrame(() => {
+      setSelectedPersona(null);
+      setIsMainSelected(true);
+    });
     scrollToPersonaDetails();
   };
 
