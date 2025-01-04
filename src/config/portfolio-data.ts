@@ -55,6 +55,13 @@ export const portfolioData: Record<Persona['id'], Persona> = {
     ],
     experiences: [
       {
+        title: '🤖 MyFinancialFuture - Lifestyle Cost Calculator',
+        description: 'Built a modern financial planning tool that helps users visualize and understand the real costs of their desired lifestyle. Features include location-specific cost of living calculations, family planning considerations, and partner income scenarios. Created to help people make informed decisions about their careers and financial goals.',
+        date: '2025',
+        tags: ['Next.js', 'Financial Planning', 'Data Visualization', 'UX Design'],
+        link: 'https://www.myfinancialfuture.xyz'
+      },
+      {
         title: '🤖 Gauntlet AI Training Program',
         description: 'Selected for an intensive 12-week AI engineering program in Austin, combining rapid application development with advanced AI integration. The program focuses on building production-grade applications using modern AI tools and architecting systems that leverage multiple AI services.',
         date: '2025',

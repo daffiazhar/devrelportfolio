@@ -20,13 +20,19 @@ export const metadata: Metadata = {
         height: 1370,
         alt: "Gary Sheng's DevRel Portfolio"
       }
-    ]
+    ],
+    type: 'website',
+    siteName: "Gary Sheng's DevRel Portfolio"
   },
   twitter: {
     card: "summary_large_image",
     title: "Gary Sheng's DevRel Portfolio",
     description: "Software Engineer, Educator, and Movement Builder passionate about empowering developers and building impactful communities.",
-    images: ["/meta.png"]
+    images: ["/meta.png"],
+    creator: "@garysheng"
+  },
+  other: {
+    'share-id': 'devrel-gary-sheng'
   }
 };
 
