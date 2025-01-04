@@ -55,7 +55,7 @@ export const portfolioData: Record<Persona['id'], Persona> = {
     ],
     experiences: [
       {
-        title: '🤖 MyFinancialFuture - Lifestyle Cost Calculator',
+        title: '🦉 MyFinancialFuture - Lifestyle Cost Calculator',
         description: 'Built a modern financial planning tool that helps users visualize and understand the real costs of their desired lifestyle. Features include location-specific cost of living calculations, family planning considerations, and partner income scenarios. Created to help people make informed decisions about their careers and financial goals.',
         date: '2025',
         tags: ['Next.js', 'Financial Planning', 'Data Visualization', 'UX Design'],
