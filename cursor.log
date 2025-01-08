@@ -137,3 +137,11 @@
     - Included features like location-specific calculations
     - Added link to myfinancialfuture.xyz website
     - Tagged with relevant technologies and concepts 
+31. Updated PodForYou experience with more detailed information:
+    - Added YouTube video processing feature
+    - Included Gmail integration details
+    - Added personalized content curation based on learning goals
+    - Updated tech stack to include Gmail API 
+32. Added additional APIs to PodForYou tech stack:
+    - Added YouTube API for video content processing
+    - Added Perplexity API for enhanced content analysis 

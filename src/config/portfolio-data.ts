@@ -88,9 +88,9 @@ export const portfolioData: Record<Persona['id'], Persona> = {
       },
       {
         title: '🎙️ PodForYou - AI Newsletter-to-Podcast Platform',
-        description: 'Building an AI-powered platform that transforms unread newsletters into personalized podcast briefings. Using advanced AI for content analysis, summarization, and natural voice synthesis to help busy professionals stay informed efficiently.',
+        description: 'Building an AI-powered platform that transforms unread newsletters and YouTube videos into personalized podcast briefings. Features include Gmail integration for newsletter processing, personalized content curation based on learning goals, and dual AI narration. Designed for busy professionals who want to stay informed while saving hours every week.',
         date: '2024',
-        tags: ['Next.js', 'AI/ML', 'Voice Synthesis', 'Content Processing'],
+        tags: ['Next.js', 'AI/ML', 'Voice Synthesis', 'Content Processing', 'Gmail API', 'YouTube API', 'Perplexity API'],
         link: 'https://podcastsforyou.com'
       },
       {
