@@ -77,7 +77,7 @@ export const portfolioData: Record<Persona['id'], Persona> = {
         title: '🧠 Ano.so - Voice Memory App',
         description: 'Building a voice-first app that helps people capture and relive meaningful moments through simple voice recordings. The app focuses on making memory capture effortless and natural, while using AI to help users organize, search, and rediscover their memories. Features include quick voice memos, smart tagging, and intuitive memory browsing.',
         date: '2024-Current',
-        tags: ['Next.js', 'Voice Tech', 'Mobile-First', 'UX Design', 'AI/ML', 'Memory Tech'],
+        tags: ['Next.js', 'Voice Tech', 'Mobile-First', 'UX Design', 'AI/ML', 'Memory Tech', 'Cloud Functions'],
         link: 'https://ano.so'
       },
       {
