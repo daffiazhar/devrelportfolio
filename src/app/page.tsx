@@ -23,23 +23,40 @@ export default function Home() {
         const startPosition = window.scrollY;
         const distance = offsetPosition - startPosition;
         const startTime = performance.now();
+        let animationFrameId: number;
+        let isUserScrolling = false;
+
+        const handleUserScroll = () => {
+          isUserScrolling = true;
+          window.removeEventListener('wheel', handleUserScroll);
+          window.removeEventListener('touchmove', handleUserScroll);
+          cancelAnimationFrame(animationFrameId);
+        };
+
+        window.addEventListener('wheel', handleUserScroll);
+        window.addEventListener('touchmove', handleUserScroll);
 
         const easeInOutQuad = (t: number) => {
           return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
         };
 
         const scroll = (currentTime: number) => {
+          if (isUserScrolling) return;
+
           const elapsed = currentTime - startTime;
           const progress = Math.min(elapsed / duration, 1);
 
           window.scrollTo(0, startPosition + distance * easeInOutQuad(progress));
 
           if (progress < 1) {
-            requestAnimationFrame(scroll);
+            animationFrameId = requestAnimationFrame(scroll);
+          } else {
+            window.removeEventListener('wheel', handleUserScroll);
+            window.removeEventListener('touchmove', handleUserScroll);
           }
         };
 
-        requestAnimationFrame(scroll);
+        animationFrameId = requestAnimationFrame(scroll);
       }
     }, 100); // Small delay to ensure state updates have completed
   };
