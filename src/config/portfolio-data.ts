@@ -55,11 +55,11 @@ export const portfolioData: Record<Persona['id'], Persona> = {
     ],
     experiences: [
       {
-        title: '🦉 MyFinancialFuture - Lifestyle Cost Calculator',
-        description: 'Built a modern financial planning tool that helps users visualize and understand the real costs of their desired lifestyle. Features include location-specific cost of living calculations, family planning considerations, and partner income scenarios. Created to help people make informed decisions about their careers and financial goals.',
-        date: '2025',
-        tags: ['Next.js', 'Financial Planning', 'Data Visualization', 'UX Design'],
-        link: 'https://www.myfinancialfuture.xyz'
+        title: '🧠 Anno.so - Voice-First Learning Journal App',
+        description: 'Building a voice-first app that helps people capture and relive meaningful insights and life moments through simple voice recordings. The app focuses on making memory capture effortless and natural, while using AI to help users organize, search, and rediscover their memories. Features include quick voice memos, smart tagging, and intuitive memory browsing.',
+        date: '2024-Current',
+        tags: ['Next.js', 'Voice Tech', 'Mobile-First', 'UX Design', 'AI/ML', 'Memory Tech', 'Cloud Functions', 'grammY', 'Railway', 'RAG'],
+        link: 'https://anno.so'
       },
       {
         title: '🤖 Gauntlet AI Training Program',
@@ -74,11 +74,11 @@ export const portfolioData: Record<Persona['id'], Persona> = {
         tags: ['Next.js', 'Firebase', 'React Native', 'Expo', 'Cross-Platform Development']
       },
       {
-        title: '🧠 Ano.so - Voice Memory App',
-        description: 'Building a voice-first app that helps people capture and relive meaningful moments through simple voice recordings. The app focuses on making memory capture effortless and natural, while using AI to help users organize, search, and rediscover their memories. Features include quick voice memos, smart tagging, and intuitive memory browsing.',
-        date: '2024-Current',
-        tags: ['Next.js', 'Voice Tech', 'Mobile-First', 'UX Design', 'AI/ML', 'Memory Tech', 'Cloud Functions'],
-        link: 'https://ano.so'
+        title: '🦉 MyFinancialFuture - Lifestyle Cost Calculator',
+        description: 'Built a modern financial planning tool that helps users visualize and understand the real costs of their desired lifestyle. Features include location-specific cost of living calculations, family planning considerations, and partner income scenarios. Created to help people make informed decisions about their careers and financial goals.',
+        date: '2025',
+        tags: ['Next.js', 'Financial Planning', 'Data Visualization', 'UX Design'],
+        link: 'https://www.myfinancialfuture.xyz'
       },
       {
         title: '🔮 AI-Powered Development Exploration',
