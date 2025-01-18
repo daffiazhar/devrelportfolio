@@ -58,7 +58,7 @@ export const portfolioData: Record<Persona['id'], Persona> = {
         title: '🧠 Anno.so - Voice-First Learning Journal App',
         description: 'Building a voice-first app that helps people capture and relive meaningful insights and life moments through simple voice recordings. The app focuses on making memory capture effortless and natural, while using AI to help users organize, search, and rediscover their memories. Features include quick voice memos, smart tagging, and intuitive memory browsing.',
         date: '2024-Current',
-        tags: ['Next.js', 'Voice Tech', 'Mobile-First', 'UX Design', 'AI/ML', 'Memory Tech', 'Cloud Functions', 'grammY', 'Railway', 'RAG'],
+        tags: ['Next.js', 'Voice Tech', 'Mobile-First', 'UX Design', 'AI/ML', 'Memory Tech', 'Cloud Functions', 'grammY', 'Railway', 'RAG', 'React Native', 'Expo'],
         link: 'https://anno.so'
       },
       {
