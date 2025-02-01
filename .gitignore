@@ -42,3 +42,5 @@ next-env.d.ts
 
 # applications directory
 /applications
+
+story.md

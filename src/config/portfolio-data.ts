@@ -55,10 +55,10 @@ export const portfolioData: Record<Persona['id'], Persona> = {
     ],
     experiences: [
       {
-        title: '🧠 Anno.so - Voice-First Learning Journal App',
-        description: 'Building a voice-first app that helps people capture and relive meaningful insights and life moments through simple voice recordings. The app focuses on making memory capture effortless and natural, while using AI to help users organize, search, and rediscover their memories. Features include quick voice memos, smart tagging, and intuitive memory browsing.',
+        title: '🧠 Anno.so - Voice Interface for Notion',
+        description: 'Building a voice interface that transforms spoken thoughts into structured Notion pages, automatically filed in the right databases. Perfect for Notion\'s 100M+ users who want to capture ideas on the go. Features include instant voice-to-text conversion, smart organization with AI-powered categorization, and seamless integration across iPhone, Mac, and web browsers.',
         date: '2024-Current',
-        tags: ['Next.js', 'Voice Tech', 'Mobile-First', 'UX Design', 'AI/ML', 'Memory Tech', 'Cloud Functions', 'grammY', 'Railway', 'RAG', 'React Native', 'Expo'],
+        tags: ['Next.js', 'Voice Tech', 'Mobile-First', 'UX Design', 'AI/ML', 'Notion API', 'Cloud Functions', 'grammY', 'Railway', 'RAG', 'Pinecone', 'toDesktop', 'React Native', 'Expo'],
         link: 'https://anno.so'
       },
       {
