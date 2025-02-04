@@ -55,11 +55,11 @@ export const portfolioData: Record<Persona['id'], Persona> = {
     ],
     experiences: [
       {
-        title: '🧠 Anno.so - Voice Interface for Notion',
-        description: 'Building a voice interface that transforms spoken thoughts into structured Notion pages, automatically filed in the right databases. Perfect for Notion\'s 100M+ users who want to capture ideas on the go. Features include instant voice-to-text conversion, smart organization with AI-powered categorization, and seamless integration across iPhone, Mac, and web browsers.',
+        title: '✨ Witney.ai - Your AI Life Witness',
+        description: 'Building an AI life witness and guide that helps people discover and stay true to their Hero\'s Journey. Witney integrates with Notion to help users recognize patterns, celebrate growth, and make choices aligned with their highest potential. Features include voice-powered journaling, personalized guidance, and seamless integration across web, desktop, and mobile platforms.',
         date: '2024-Current',
-        tags: ['Next.js', 'Voice Tech', 'Mobile-First', 'UX Design', 'AI/ML', 'Notion API', 'Cloud Functions', 'grammY', 'Railway', 'RAG', 'Pinecone', 'toDesktop', 'React Native', 'Expo'],
-        link: 'https://anno.so'
+        tags: ['Next.js', 'Voice Tech', 'AI/ML', 'UX Design', 'Mobile-First', 'Notion API', 'Cloud Functions', 'grammY', 'Railway', 'RAG', 'Pinecone', 'toDesktop', 'React Native', 'Expo'],
+        link: 'https://witney.ai'
       },
       {
         title: '🤖 Gauntlet AI Training Program',
