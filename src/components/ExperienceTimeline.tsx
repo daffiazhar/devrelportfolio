@@ -16,8 +16,6 @@ export function ExperienceTimeline({ experiences }: ExperienceTimelineProps) {
   return (
     <div className="relative space-y-8">
       {/* Center line that connects all cards */}
-      <div className="absolute left-1/2 top-8 bottom-0 w-0.5 bg-muted -translate-x-1/2" />
-      
       {experiences.map((experience, index) => (
         <motion.div
           key={index}
@@ -27,10 +25,10 @@ export function ExperienceTimeline({ experiences }: ExperienceTimelineProps) {
         >
           <div className="relative">
             <Card className={cn(
-              "transition-all duration-300",
-              isCurrent(experience.date) ? "shadow-[0_0_15px_rgba(99,102,241,0.3)] hover:shadow-[0_0_20px_rgba(99,102,241,0.4)]" : "hover:shadow-lg"
+              "transition-all duration-300 bg-black/20 text-white shadow-none rounded-lg border-0",
+              isCurrent(experience.date) ? "hover:shadow-[0_0_20px_rgba(99,102,241,0.4)]" : "hover:shadow-lg"
             )}>
-              <CardContent className="p-4 space-y-2">
+              <CardContent className="p-4 space-y-2 bg-transparent">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <h3 className="font-semibold">
@@ -57,23 +55,21 @@ export function ExperienceTimeline({ experiences }: ExperienceTimelineProps) {
                       )}
                     </h3>
                     {isCurrent(experience.date) && (
-                      <span className="px-2 py-0.5 text-xs rounded-full bg-accent1/20 text-accent1 font-medium animate-pulse">
-                        Current
-                      </span>
+                      null
                     )}
                   </div>
-                  <span className="text-sm text-muted-foreground font-mono">
+                  <span className="text-sm text-white font-mono">
                     {experience.date}
                   </span>
                 </div>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-white">
                   {experience.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {experience.tags.map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
-                      className="px-2 py-1 text-xs rounded-full bg-accent1/10 text-accent1"
+                      className="px-2 py-1 text-xs rounded-full bg-accent1/10 text-white"
                     >
                       {tag}
                     </span>

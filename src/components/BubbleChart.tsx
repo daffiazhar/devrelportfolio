@@ -29,36 +29,20 @@ interface Link {
 }
 
 const MAIN_NODE: Node = {
-  id: 'gary',
-  label: ['Gary Sheng'],
+  id: 'daffi',
+  label: ['Daffi'],
   emoji: '',
   size: 200,
   type: 'main'
 };
 
-const PERSONA_NODES: Node[] = [
-  { 
-    id: 'engineer', 
-    label: ['Software', 'Engineer'], 
-    emoji: portfolioData.engineer.emoji,
-    size: 160, 
-    type: 'persona' 
-  },
-  { 
-    id: 'educator', 
-    label: ['Educator'], 
-    emoji: portfolioData.educator.emoji,
-    size: 160, 
-    type: 'persona' 
-  },
-  { 
-    id: 'movement-builder', 
-    label: ['Movement', 'Builder'], 
-    emoji: portfolioData['movement-builder'].emoji,
-    size: 160, 
-    type: 'persona' 
-  }
-];
+const PERSONA_NODES: Node[] = Object.values(portfolioData).map(persona => ({
+  id: persona.id,
+  label: persona.title ? [persona.title] : [persona.id], // fallback to id if title is empty
+  emoji: persona.emoji,
+  size: 160,
+  type: 'persona'
+}));
 
 // Add helper function for positioning
 function updateNodePositions(
@@ -66,24 +50,24 @@ function updateNodePositions(
   height: number,
   mainNode: Node,
   engineerNode: Node | undefined,
-  educatorNode: Node | undefined,
-  movementBuilderNode: Node | undefined
+  programmerNode: Node | undefined,
+  coHostNode?: Node | undefined
 ) {
   const isMobile = width < 450; // Tighter mobile breakpoint
   
   // Mobile position multipliers - easy to tweak
   const mobileMultipliers = {
     engineer: { x: 0.20, y: 0.4 },
-    educator: { x: 0.40, y: 0.67 },
-    movementBuilder: { x: 0.80, y: 0.88 },
+    programmer: { x: 0.80, y: 0.88 },
+    coHost: { x: 0.75, y: 0.70 },
     main: { x: 0.70, y: 0.15 }
   };
 
   // Desktop position multipliers - unchanged from original
   const desktopMultipliers = {
     engineer: { x: 0.27, y: 0.2 },
-    educator: { x: 0.20, y: 0.49 },
-    movementBuilder: { x: 0.35, y: 0.75 },
+    programmer: { x: 0.35, y: 0.75 },
+    coHost: { x: 0.60, y: 0.85 },
     main: { x: 0.75, y: 0.15 }
   };
 
@@ -100,17 +84,27 @@ function updateNodePositions(
     engineerNode.fy = height * multipliers.engineer.y;
   }
 
-  // Educator node position
-  if (educatorNode) {
-    educatorNode.fx = width * multipliers.educator.x;
-    educatorNode.fy = height * multipliers.educator.y;
+  // Programmer node position
+  if (programmerNode) {
+    programmerNode.fx = width * multipliers.programmer.x;
+    programmerNode.fy = height * multipliers.programmer.y;
   }
 
-  // Movement Builder node position
-  if (movementBuilderNode) {
-    movementBuilderNode.fx = width * multipliers.movementBuilder.x;
-    movementBuilderNode.fy = height * multipliers.movementBuilder.y;
+  // Co-Host node position
+  if (coHostNode) {
+    coHostNode.fx = width * multipliers.coHost.x;
+    coHostNode.fy = height * multipliers.coHost.y;
   }
+}
+
+// Helper to parse linear-gradient string into SVG stops
+function parseLinearGradient(gradient: string) {
+  // Example: linear-gradient(90deg, #FFB6B9 0%, #6EC6FF 60%, #FFF176 100%)
+  const match = gradient.match(/linear-gradient\(([^,]+),(.+)\)/);
+  if (!match) return null;
+  const angle = match[1].trim();
+  const stops = match[2].split(',').map(s => s.trim());
+  return { angle, stops };
 }
 
 export function BubbleChart({ className, selectedPersona, onSelectPersona, onSelectMain, isMainSelected }: BubbleChartProps) {
@@ -149,17 +143,49 @@ export function BubbleChart({ className, selectedPersona, onSelectPersona, onSel
       .force('y', d3.forceY(height * 0.5));
 
     // Fix positions for persona nodes with more spacing
-    const engineerNode = nodes.find(n => n.id === 'engineer');
-    const educatorNode = nodes.find(n => n.id === 'educator');
-    const movementBuilderNode = nodes.find(n => n.id === 'movement-builder');
+    const musicMakerNode = nodes.find(n => n.id === 'music maker');
+    const programmerNode = nodes.find(n => n.id === 'programmer');
+    const coHostNode = nodes.find(n => n.id === 'Co-Host');
 
     // Use helper function for initial positioning
-    updateNodePositions(width, height, MAIN_NODE, engineerNode, educatorNode, movementBuilderNode);
+    updateNodePositions(width, height, MAIN_NODE, musicMakerNode, programmerNode, coHostNode);
 
     const svg = d3.select(svgRef.current);
 
     // Create all defs
     const defs = svg.append('defs');
+
+    // Create gradients for persona bubbles
+    PERSONA_NODES.forEach(node => {
+      const persona = portfolioData[node.id as PersonaId];
+      if (persona.color && persona.color.startsWith('linear-gradient')) {
+        const parsed = parseLinearGradient(persona.color);
+        if (parsed) {
+          const gradId = `bubble-gradient-${node.id.replace(/\s+/g, '-')}`;
+          const svgAngle = (() => {
+            // Convert CSS deg to SVG gradientTransform
+            const deg = parseFloat(parsed.angle);
+            // SVG 0deg is vertical, CSS 0deg is horizontal, so rotate by (deg-90)
+            return `rotate(${deg - 90})`;
+          })();
+          const grad = defs.append('linearGradient')
+            .attr('id', gradId)
+            .attr('gradientTransform', svgAngle)
+            .attr('x1', '0%')
+            .attr('y1', '0%')
+            .attr('x2', '100%')
+            .attr('y2', '100%');
+          parsed.stops.forEach(stop => {
+            const parts = stop.match(/(#[0-9A-Fa-f]{6,8}|rgba?\([^\)]+\)|[a-zA-Z]+)\s*(\d+%?)/);
+            if (parts) {
+              grad.append('stop')
+                .attr('offset', parts[2])
+                .attr('stop-color', parts[1]);
+            }
+          });
+        }
+      }
+    });
 
     // Create circular clip path
     defs.append('clipPath')
@@ -278,6 +304,9 @@ export function BubbleChart({ className, selectedPersona, onSelectPersona, onSel
       .attr('fill', d => {
         if (d.type === 'main') return 'url(#gradient)';
         const persona = portfolioData[d.id as PersonaId];
+        if (persona.color && persona.color.startsWith('linear-gradient')) {
+          return `url(#bubble-gradient-${d.id.replace(/\s+/g, '-')})`;
+        }
         if (selectedPersona === d.id) {
           return persona.color;
         }
@@ -344,42 +373,41 @@ export function BubbleChart({ className, selectedPersona, onSelectPersona, onSel
         .attr('y2', d => d.target.y!);
 
       nodeElements
-        .attr('transform', d => `translate(${d.x},${d.y})`);
-    });
+           .attr('transform', d => `translate(${d.x},${d.y})`);
+           });
+// Handle window resize
+const handleResize = () => {
+  if (!containerRef.current) return;
+  const newWidth = containerRef.current.clientWidth;
+  const newHeight = 600;
+  
+  // Use same helper function for resize positioning
+  updateNodePositions(newWidth, newHeight, MAIN_NODE, musicMakerNode, programmerNode, coHostNode);
+  
+  simulation.alpha(0.3).restart();
+};
 
-    // Handle window resize
-    const handleResize = () => {
-      if (!containerRef.current) return;
-      const newWidth = containerRef.current.clientWidth;
-      const newHeight = 600;
-      
-      // Use same helper function for resize positioning
-      updateNodePositions(newWidth, newHeight, MAIN_NODE, engineerNode, educatorNode, movementBuilderNode);
-      
-      simulation.alpha(0.3).restart();
-    };
+window.addEventListener('resize', handleResize);
+return () => window.removeEventListener('resize', handleResize);
+}, [selectedPersona, onSelectPersona, onSelectMain, isMainSelected]);
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [selectedPersona, onSelectPersona, onSelectMain, isMainSelected]);
-
-  return (
-    <div ref={containerRef} className={cn('relative w-full h-[600px]', className)}>
-      <svg
-        ref={svgRef}
-        className="w-full h-full"
-        style={{ overflow: 'visible' }}
-      />
-      {!selectedPersona && !isMainSelected && (
-        <div className="absolute bottom-4 left-0 right-0 text-center">
-          <button 
-            onClick={scrollToPersonas}
-            className="text-gray-500 text-sm hover:text-accent1 transition-colors cursor-pointer animate-pulse"
-          >
-            ☝️ Click a bubble to explore each persona that makes up my DevRel journey
-          </button>
-        </div>
-      )}
-    </div>
-  );
-} 
+return (
+  <div ref={containerRef} className={cn('relative w-full h-[600px]', className)}>
+    <svg
+      ref={svgRef}
+      className="w-full h-full"
+      style={{ overflow: 'visible' }}
+    />
+    {!selectedPersona && !isMainSelected && (
+      <div className="absolute bottom-4 left-0 right-0 text-center">
+        <button 
+          onClick={scrollToPersonas}
+          className="text-gray-500 text-sm hover:text-accent1 transition-colors cursor-pointer animate-pulse"
+        >
+          ☝️ Click a bubble to explore each persona that makes up my DevRel journey
+        </button>
+      </div>
+    )}
+  </div>
+);
+}

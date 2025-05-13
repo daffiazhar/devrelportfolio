@@ -94,6 +94,14 @@ export default function Home() {
             isMainSelected={isMainSelected}
           />
         </section>
+        <section className="py-10 px-4">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl font-bold mb-3">Jelas Tujuan</h2>
+            <p className="text-base md:text-lg text-gray-300">
+              Tanpa tujuan yang jelas, kepercayaan diri akan rapuh. Fokus dimulai dari arah yang terang.
+            </p>
+          </div>
+        </section>
         <section id="pillars">
           <DevRelPillars />
         </section>

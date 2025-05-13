@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import type { PersonaId } from '@/types/portfolio';
 
@@ -6,6 +7,8 @@ interface MainBubbleBioProps {
 }
 
 export function MainBubbleBio({ onSelectPersona }: MainBubbleBioProps) {
+  const [text, setText] = useState('');
+
   const scrollToPersonas = () => {
     document.getElementById('personas')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -16,6 +19,9 @@ export function MainBubbleBio({ onSelectPersona }: MainBubbleBioProps) {
     }
   };
 
+  // Edit the text below to change what appears under the heading
+  const myText = `Namaku Daffi Azhar Nagata, Panggilanku Daffi. Aku pernah menjadi Co-Host di Saluran Televisi Terbesar Se-Indonesia. Untuk lebih lanjut tentang itu, cek persona Co-Host di bagian atas!`;
+
   return (
     <div 
       id="persona-details"
@@ -23,48 +29,8 @@ export function MainBubbleBio({ onSelectPersona }: MainBubbleBioProps) {
     >
       <Card className="p-8 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20">
         <div className="flex flex-col items-center text-center space-y-6">
-          <h2 className="text-3xl font-bold">👋 Hi, I&apos;m Gary</h2>
-          <div className="text-lg text-gray-300 max-w-2xl space-y-4">
-            <p>
-              I&apos;m a unique blend of{' '}
-              <button 
-                onClick={() => handlePersonaClick('engineer')}
-                className="text-[#6366F1] bg-[#6366F1]/10 px-1 rounded hover:bg-[#6366F1]/20 transition-colors"
-              >
-                software engineer
-              </button>,{' '}
-              <button 
-                onClick={() => handlePersonaClick('educator')}
-                className="text-[#8B5CF6] bg-[#8B5CF6]/10 px-1 rounded hover:bg-[#8B5CF6]/20 transition-colors"
-              >
-                educator
-              </button>, and{' '}
-              <button 
-                onClick={() => handlePersonaClick('movement-builder')}
-                className="text-[#EC4899] bg-[#EC4899]/10 px-1 rounded hover:bg-[#EC4899]/20 transition-colors"
-              >
-                movement builder
-              </button>{' '}
-              - three personas that combine to create an ideal skillset for supercharging developer ecosystems.
-            </p>
-            <p>
-              My engineering background from Google and Duke gives me deep technical credibility, while my experience 
-              as an educator helps me make complex concepts accessible and engaging.
-            </p>
-            <p>
-              As a movement builder, I understand how to cultivate thriving communities and drive adoption.
-            </p>
-            <p>
-              <strong>This <span className="animate-shimmer bg-[linear-gradient(110deg,#fff,15%,#6366F1,35%,#8B5CF6,50%,#EC4899,65%,#fff,85%,#fff)] bg-[length:200%_100%] [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]">combination</span> allows me to not just build great developer tools, but to teach their value 
-              effectively and build passionate communities around them.</strong>
-            </p>
-          </div>
-          <button 
-            onClick={scrollToPersonas}
-            className="text-gray-400 text-base hover:text-accent1 transition-colors cursor-pointer animate-pulse mt-4"
-          >
-            ✨ Click on the Software Engineer, Educator, or Movement Builder bubbles to explore how each persona contributes to my DevRel approach
-          </button>
+          <h2 className="text-3xl font-bold">👋 Halo!, Aku Daffi</h2>
+          <div className="mt-4 text-lg text-gray-200 whitespace-pre-line">{myText}</div>
         </div>
       </Card>
     </div>

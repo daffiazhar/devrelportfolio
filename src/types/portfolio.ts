@@ -19,11 +19,10 @@ export interface Persona {
   emoji: string;
   color: string;
   description: string;
-  inspirations: PersonaInspiration[];
   experiences: Experience[];
 }
 
-export type PersonaId = 'engineer' | 'educator' | 'movement-builder';
+export type PersonaId = 'music maker' | 'programmer' | 'Co-Host';
 
 export interface DevRelPillar {
   id: string;
